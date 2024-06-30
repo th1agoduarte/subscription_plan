@@ -21,7 +21,7 @@ class Uuid
     public function ensureIsValid(string $value): void
     {
         if(!UuidUuid::isValid($value)){
-            throw new \InvalidArgumentException("Invalid UUID");
+            throw new EntityValidationException("Invalid UUID");
         }
         
     }
