@@ -1,0 +1,29 @@
+services:
+    backend:
+        container_name: backend_php
+        build:
+            context: ./.docker
+            dockerfile: Dockerfile.php
+        working_dir: /var/www
+        volumes:
+            - ./:/var/www
+        networks:
+            - backend_php
+
+    server_http:
+        container_name: server_http
+        image: nginx:latest
+        ports:
+            - "80:80"
+        volumes:
+            - ./.docker/nginx/:/etc/nginx/conf.d/
+            - ./:/var/www
+        networks:
+            - backend_php
+
+networks:
+    backend_php:
+        driver: bridge
+
+
+        
