@@ -2,7 +2,7 @@
 
 namespace Core\SeedWork\Domain\Validators;
 
-use Core\SeedWork\Domain\ValueObjects\EntityValidationException;
+use Core\SeedWork\Domain\Excepetions\EntityValidationException;
 
 class DomainValidator{
     public static function validateString(string $value, ?string $fieldName = null,?string $message = null ): void

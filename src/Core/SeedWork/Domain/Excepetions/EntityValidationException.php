@@ -1,6 +1,6 @@
 <?php 
 
-namespace Core\SeedWork\Domain\ValueObjects;
+namespace Core\SeedWork\Domain\Excepetions;
 
 use Exception;
 

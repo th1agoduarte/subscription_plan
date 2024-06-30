@@ -3,9 +3,13 @@
 namespace Core\Plan\Domain;
 
 use Core\SeedWork\Domain\ValueObjects\Uuid;
+use Core\SeedWork\Domain\Traits\MethodsMagicsTraits;
 
 class Plan
 {
+
+    use MethodsMagicsTraits;
+
     public function __construct(
         protected ?Uuid $id,
         protected string $name,
@@ -15,15 +19,6 @@ class Plan
         $this->id = $id ?? Uuid::random();
     }
 
-    public function __get($name)
-    {
-        return $this->{$name};
-    }
-
-    public function id():string
-    {
-        return $this->id;
-    }
 
     
 }
